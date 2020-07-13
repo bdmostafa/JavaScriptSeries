@@ -186,12 +186,33 @@ function showPersonInfo(person) {
     const [person1, person2] = Person // 0th and 1th object access
 
     console.log(person1)
+    // { name: 'Mostafa', age: 29, height: 5.4, status: 'Programmer' } 
     console.log(person2)
+    // { name: 'Mahmud', age: 32, height: 6.1, status: 'Developer' } 
 
-    // 1st object return
+    // 1st object return and execution stop by return
     return `
         Name: ${person1.name}
         Age: ${person1.age}
     `
 }
-console.log(showPersonInfo(Person))
+console.log(showPersonInfo(Person));
+/*
+Name: Mostafa
+Age: 29
+*/
+
+// Passing objects by for loop
+function showPersonByLoop(person) {
+    let singlePerson;
+    console.log(singlePerson); // undefined
+
+    for (let index = 0; index < person.length; index++) {
+        singlePerson = person[index];
+        console.log(singlePerson);
+        // Output is all objects
+    }
+    console.log(singlePerson);
+    // Output is last object
+}
+showPersonByLoop(Person);
