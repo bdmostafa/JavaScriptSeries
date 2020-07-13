@@ -162,7 +162,7 @@ const person1 = {
 }
 console.log(person1.showPersonInfo());
 
-// Multiple objects in one array
+// Multiple objects in one array ======================================
 const Person = [{
         name: 'Mostafa',
         age: 29,
@@ -202,7 +202,7 @@ Name: Mostafa
 Age: 29
 */
 
-// Passing objects by for loop
+// Passing objects by for loop ================================
 function showPersonByLoop(person) {
     let singlePerson;
     console.log(singlePerson); // undefined
@@ -216,3 +216,46 @@ function showPersonByLoop(person) {
     // Output is last object
 }
 showPersonByLoop(Person);
+
+// Previous problem fixing (output all objects outside the loop is needed) ==============
+function showAllPersonByFor(person) {
+    // initialization by '' for not to count undefined
+    let singlePerson = '';
+
+    for (let index = 0; index < person.length; index++) {
+        singlePerson += `
+        Name: ${person[index].name}
+        Age: ${person[index].age}
+        Height: ${person[index].height}
+        Status: ${person[index].status}
+        `
+    }
+
+    console.log(singlePerson)
+    // Output is all objects
+    return singlePerson;
+
+}
+
+const person = showAllPersonByFor(Person);
+console.log(person);
+// Output is all objects
+
+// Fixing with while loop =============================
+function showAllPersonByWhile(person) {
+    // initialization by '' for not to count undefined
+    let singlePerson = '';
+    let index = 0;
+    while (index < person.length) {
+        singlePerson += `
+        Name: ${person[index].name}
+        Age: ${person[index].age}
+        Height: ${person[index].height}
+        Status: ${person[index].status}
+        `
+        index++;
+    }
+    return singlePerson;
+}
+const myPerson = showAllPersonByWhile(Person);
+console.log(myPerson);
