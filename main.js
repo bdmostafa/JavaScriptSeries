@@ -143,3 +143,21 @@ const [fishName, fishPrice, , fishAvailability] = myFishInfo;
 
 console.log(myFishInfo[0]); // Salmon
 console.log(fishName); // Salmon
+
+// Method -> a function indise an object
+// this keyword
+const person1 = {
+    name: 'Mostafa',
+    age: 29,
+    height: 5.4,
+    status: 'Programmer',
+    showPersonInfo: function () {
+        return `
+            Name: ${this.name}
+            Age: ${this.age}
+            Height: ${this.height}
+            Status: ${this.status}
+        `
+    }
+}
+console.log(person1.showPersonInfo());
