@@ -81,6 +81,13 @@ console.log(`
     Availability: ${productObj['pAvailability']}
 `)
 
+// Object destructuring
+const {
+    pName,
+    pPrice
+} = productObj;
+console.log(pName, pPrice);
+
 // Function
 // Object passing through a function
 const productObj2 = {
@@ -90,18 +97,49 @@ const productObj2 = {
     pAvailability: false
 };
 
-function showProductInfo(pObj) {
+function showProductInfo(pObj, productName = 'Product X') { // default parameter
     console.log(pObj);
 
+    // Object destructuring
+    const {
+        pName,
+        pPrice,
+        pQuantity,
+        pAvailability
+    } = pObj;
+
     return `
-         Product Name: ${pObj.pName}
-         Product Price: ${pObj.pPrice}
-         Quantity: ${pObj.pQuantity}
-         Availability: ${pObj.pAvailability}
+        ${productName} -
+         Product Name: ${pName}
+         Product Price: ${pPrice}
+         Quantity: ${pQuantity}
+         Availability: ${pAvailability}
     `
 }
 
-const product1 = showProductInfo(productObj);
-const product2 = showProductInfo(productObj2)
+const product1 = showProductInfo(productObj, 'Product1'); // 2 arguments
+const product2 = showProductInfo(productObj2); // only 1 argument
 console.log(product1);
-console.log(product2)
+/*
+Product1 -
+    Product Name: banana
+    Product Price: 12
+    Quantity: 4
+    Availability: true
+*/
+console.log(product2);
+/*
+Product X -
+    Product Name: mango
+    Product Price: 120
+    Quantity: 8
+    Availability: false
+*/
+
+// Array destructuring
+const myFishInfo = ['Salmon', 990, 1, true];
+
+const [fishName, fishPrice, , fishAvailability] = myFishInfo;
+
+console.log(myFishInfo[0]); // Salmon
+console.log(fishName); // Salmon
