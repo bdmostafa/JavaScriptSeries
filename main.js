@@ -161,3 +161,37 @@ const person1 = {
     }
 }
 console.log(person1.showPersonInfo());
+
+// Multiple objects in one array
+const Person = [{
+        name: 'Mostafa',
+        age: 29,
+        height: 5.4,
+        status: 'Programmer'
+    },
+    {
+        name: 'Mahmud',
+        age: 32,
+        height: 6.1,
+        status: 'Developer'
+    }
+]
+
+function showPersonInfo(person) {
+    console.log(person)
+
+    // Array destructuring
+    // const [person1] = Person // 0th indexed object access
+    // console.log(person1)
+
+    const [person1, person2] = Person // 0th and 1th object access
+    console.log(person1)
+    console.log(person2)
+
+    return `
+        Name: ${person1.name}
+        Age: ${person1.age}
+
+    `
+}
+console.log(showPersonInfo(Person))
