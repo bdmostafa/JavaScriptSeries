@@ -183,15 +183,15 @@ function showPersonInfo(person) {
     // Array destructuring
     // const [person1] = Person // 0th indexed object access
     // console.log(person1)
-
     const [person1, person2] = Person // 0th and 1th object access
+
     console.log(person1)
     console.log(person2)
 
+    // 1st object return
     return `
         Name: ${person1.name}
         Age: ${person1.age}
-
     `
 }
 console.log(showPersonInfo(Person))
