@@ -22,42 +22,42 @@ function showFactorial(n) {
 (showFactorial(5));
 
 
-// // factorial with while loop
-// function showFactorialWithWhile(n) {
-//     let factorial = 1;
+// factorial with while loop
+function showFactorialWithWhile(n) {
+    let factorial = 1;
 
-//     if (n === 0) {
-//         return 1;
-//     } else {
-//         let i = 1;
-//         while (i <= n) {
-//             factorial = factorial * i;
-//             console.log(i, factorial);
-//             i++;
-//         }
+    if (n === 0) {
+        return 1;
+    } else {
+        let i = 1;
+        while (i <= n) {
+            factorial = factorial * i;
+            console.log(i, factorial);
+            i++;
+        }
 
-//         // loop from highest to lowest
-//         /*
-//         let i = n;
-//         while (i >= 1) {
-//             factorial = factorial * i;
-//             console.log(i, factorial);
-//             i--;
-//         }
-//         */
-//     }
+        // loop from highest to lowest
+        /*
+        let i = n;
+        while (i >= 1) {
+            factorial = factorial * i;
+            console.log(i, factorial);
+            i--;
+        }
+        */
+    }
 
-// }
-// showFactorialWithWhile(10)
+}
+showFactorialWithWhile(10)
 
-// // factorial with Recursive
-// function factorialRecursive(n) {
-//     if (n === 0) {
-//         return 1;
-//     } else {
-//         return n * factorialRecursive(n - 1);
-//     }
-// }
+// factorial with Recursive
+function factorialRecursive(n) {
+    if (n === 0) {
+        return 1;
+    } else {
+        return n * factorialRecursive(n - 1);
+    }
+}
 
-// const result = factorialRecursive(11);
-// console.log(result);
+const result = factorialRecursive(11);
+console.log(result);
