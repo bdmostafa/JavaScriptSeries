@@ -1,3 +1,4 @@
+// [0, 1, 1, 2, 3, 5, 8, 13, 21, ...]
 function showFibonacci(n) {
     let fibo = [0, 1];
     for (let i = 2; i <= n; i++) {
@@ -9,6 +10,13 @@ function showFibonacci(n) {
 }
 let result = showFibonacci(10);
 console.log(result);
+/*
+[
+    0, 1, 1, 2, 3,
+    5, 8, 13, 21, 34,
+    55
+]
+*/
 
 // Fibonacci Recursive
 function fiboRecursive(n) {
@@ -23,11 +31,35 @@ function fiboRecursive(n) {
 }
 
 const fiboResult = fiboRecursive(15);
-console.log(fiboResult);
+console.log(fiboResult); // 610
 
 // Fibonacci Series in recursive
+
+function fiboSeriesRecursive(n) {
+    if (n === 0) {
+        return [0];
+    } else if (n === 1) {
+        return [0, 1];
+    } else {
+        // Calculate array nth element
+        let fibo = fiboSeriesRecursive(n - 1)
+        let nextElement = fibo[n - 1] + fibo[n - 2];
+        fibo.push(nextElement);
+        return fibo;
+    }
+}
+console.log(fiboSeriesRecursive(7));
+/*
+[
+    0, 1, 1, 2,
+    3, 5, 8, 13
+]
+*/
+
 function fiboSeries(n) {
-    if (n === 1) {
+    if (n === 0) {
+        return [0];
+    } else if (n === 1) {
         return [0, 1];
     } else {
         let series = fiboSeries(n - 1);
@@ -37,3 +69,10 @@ function fiboSeries(n) {
 }
 const seriesResult = fiboSeries(10);
 console.log(seriesResult);
+/*
+[
+    0, 1, 1, 2, 3,
+    5, 8, 13, 21, 34,
+    55
+]
+*/
