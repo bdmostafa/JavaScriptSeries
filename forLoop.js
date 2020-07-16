@@ -71,13 +71,15 @@ const persons = [{
         name: 'Mostafa',
         age: 29,
         gender: 'male',
-        status: 'developer'
+        status: 'developer',
+        availability: true
     },
     {
         name: 'Mahmud',
         age: 32,
         gender: 'male',
-        status: 'designer'
+        status: 'designer',
+        availability: false
     }
 ];
 
@@ -86,13 +88,34 @@ function showPersonInfo(persons) {
     let singlePerson = '';
 
     for (let person of persons) {
-        console.log(person)
+        // console.log(person)
+
+        // singlePerson += `
+        // Name: ${person.name}
+        // Age: ${person.age}
+        // Gender: ${person.gender}
+        // Status: ${person.status}
+        // ${person.availability ? 'Available to work' : 'Not available'}
+        // `
+
+        // Or we can do obj destructuring to minimize coding
+        const {
+            name,
+            age,
+            gender,
+            status,
+            availability
+        } = person;
+
         singlePerson += `
-        Name: ${person.name}
-        Age: ${person.age}
-        Gender: ${person.gender}
-        Status: ${person.status}
+        Name: ${name}
+        Age: ${age}
+        Gender: ${gender}
+        Status: ${status}
+        ${availability ? 'Available to work' : 'Not available'}
         `
+
+
     }
     return singlePerson;
 
