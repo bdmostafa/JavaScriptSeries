@@ -49,3 +49,5 @@ console.log(name, restObjValue);
 
 // Again spread for unpacking (to be solved later)
 // console.log(name, ...restObjValue);
+console.log(...name);
+// M o s t a f a
