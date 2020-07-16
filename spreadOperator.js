@@ -1,4 +1,6 @@
-// Spread usages on array and object for copying arr and obj
+/* Spread Operator is unpacking collected elements such as arrays into single elements
+Spread usages on array and object for copying part of the arr and obj
+*/
 
 // Spread on array ===================================================
 const arrOne = ['I', 'love', 'Bangladesh']
