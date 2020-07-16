@@ -13,7 +13,7 @@ console.log(Func());
 const oneLineFunc = () => 'go go programming...';
 console.log(oneLineFunc());
 
-// When signle parameter, we can create function without bracket
+// When signle parameter, we can create function without bracket (persons)
 const persons = [{
         name: 'Mostafa',
         age: 29,
