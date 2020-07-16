@@ -46,3 +46,6 @@ const {
 } = updatePerson;
 console.log(name, restObjValue);
 // Mostafa { age: 30, gender: 'male', status: 'developer' }
+
+// Again spread for unpacking (to be solved later)
+// console.log(name, ...restObjValue);
