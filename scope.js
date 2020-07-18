@@ -53,4 +53,4 @@ function sum(arr) {
 }
 
 const arr = [5, 6, 7];
-console.log(sum(arr))
+console.log(sum(arr));
