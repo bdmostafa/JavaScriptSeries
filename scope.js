@@ -37,3 +37,20 @@ console.log(a); // 3
 outerFunction();
 // call outerFunction and innerFunction
 outerFunction()();
+
+// In practice ==================================
+// Sum of the value of the array
+function sum(arr) {
+    let sum = 0;
+    if (!Array.isArray(arr)) return `${arr} is not an array. Please input an array!`
+
+    for (let num of arr) {
+        // let sum = 0; It should not assign here because of local scope in loop
+        sum += num;
+        // return sum; 
+    }
+    return sum;
+}
+
+const arr = [5, 6, 7];
+console.log(sum(arr))
