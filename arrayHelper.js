@@ -69,3 +69,10 @@ console.log(filteredArr); // [ 'Programming', 'Life' ]
 const findArr = arrMain.find((el) => el.length > 1 && el)
 
 console.log(findArr); // Programming
+
+
+// In practice ======================================
+// Find the element that has 'mm' in it and return the element
+const filteredMM = arrMain.filter(el => el.includes('mm'))
+
+console.log(filteredMM)
