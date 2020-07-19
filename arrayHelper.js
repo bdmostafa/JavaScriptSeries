@@ -112,3 +112,13 @@ const reducedVal = arrMain.reduce((accumulator, currentVal) => {
 // When argument (Our) is passed, it is considered as accumulator at first
 console.log(reducedVal);
 // Our Programming Is Life
+
+// In practice (reduce) =================
+const nums = [5, 6, 7];
+const sum = nums.reduce((accumulator, currentValue) => accumulator + currentValue);
+// or
+/* const sum = nums.reduce((accumulator, currentValue) => {
+ return accumulator + currentValue;
+}, 0);
+*/
+console.log(sum);
