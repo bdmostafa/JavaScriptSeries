@@ -48,7 +48,7 @@ console.log(mapArr);
 */
 
 // if 'el.length > 3' is true, execute 'el'
-const filteredArr = arrMain.filter((el) => el.length > 3 && el)
+// const filteredArr = arrMain.filter((el) => el.length > 3 && el)
 
 
 // Without '&& el', also it runs
@@ -56,3 +56,16 @@ const filteredArr = arrMain.filter((el) => el.length > 3)
 
 
 console.log(filteredArr); // [ 'Programming', 'Life' ]
+
+
+// Array Find ===================================
+/* Properties (filter) ==========
+    1. Works like regular looping
+    2. works with array
+    3. return a single 1st value (based on some condition)
+    4. does not change the original array
+*/
+
+const findArr = arrMain.find((el) => el.length > 1 && el)
+
+console.log(findArr); // Programming
