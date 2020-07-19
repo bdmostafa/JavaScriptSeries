@@ -71,8 +71,27 @@ const findArr = arrMain.find((el) => el.length > 1 && el)
 console.log(findArr); // Programming
 
 
-// In practice ======================================
+// In practice (filter) ======================================
 // Find the element that has 'mm' in it and return the element
 const filteredMM = arrMain.filter(el => el.includes('mm'))
 
-console.log(filteredMM)
+console.log(filteredMM);
+
+
+// Array Every and Some ===================================
+/* Properties (filter) ==========
+    1. works like regular looping
+    2. works with array
+    3. returns boolean value, true or false (based on some condition)
+    4. does not change the original array
+*/
+
+// If all the elements are satisfied on condition, returns true
+const everyArr = arrMain.every(el => typeof el === 'string')
+
+console.log(everyArr); // true
+
+// If any one element is satisfied on condition, returns true
+const someArr = arrMain.some(el => typeof el === 'Is')
+
+console.log(everyArr); // true
