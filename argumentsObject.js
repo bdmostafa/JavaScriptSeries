@@ -8,7 +8,7 @@ console.log(sum(2, 4, 6));
 
 function sumArgs() {
     console.log(arguments);
-    // total = 0
+    // let total = 0
     // Arguments can not use array helper method like reduce, filter etc. but for of loops
     // for (let num of arguments) {
     //     total += num
@@ -27,3 +27,21 @@ function sumArgs() {
     return total;
 }
 console.log(sumArgs(5, 7, 9)); // 21
+
+// Alternative way to use argument object by using REST operator
+function sumArgsByRest(num1, ...restVal) {
+    console.log(...restVal); // 20 30
+    console.log(restVal); // [20, 30]
+
+    return restVal.reduce((acc, curr) => {
+        return acc + curr;
+    }, num1);
+}
+console.log(sumArgsByRest(10, 20, 30)); // 60
+
+// Or using just rest parameter
+function sumByRestOnly(...restVal) {
+    return restVal.reduce((acc, curr) => acc + curr);
+}
+
+console.log(sumByRestOnly(10, 20, 30)); // 60
