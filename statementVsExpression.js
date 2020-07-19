@@ -18,3 +18,15 @@ console.log(speech);
 
 console.log(`${speech.toUpperCase()}`);
 console.log(10 * Math.random());
+
+// Another example
+const statement = function () {
+    return 'This is statement, not expression';
+}
+console.log(statement());
+
+// (function () {...}()) or (function () {...})()
+const expression = (function () {
+    return 'This is expression because this function is called itself and returns value';
+}())
+console.log(expression);
