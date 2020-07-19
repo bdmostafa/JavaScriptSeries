@@ -95,3 +95,20 @@ console.log(everyArr); // true
 const someArr = arrMain.some(el => typeof el === 'Is')
 
 console.log(everyArr); // true
+
+
+// Array Reduce ===================================
+/* Properties (reduce) ==========
+    1. works like regular looping
+    2. works with array
+    3. returns a single value (based on some condition as summation, addition etc.)
+    4. does not change the original array
+*/
+
+const reducedVal = arrMain.reduce((accumulator, currentVal) => {
+    // accumulator is the 1st initialized value and currentVal is the 2nd value then next the result is accumulator and currentVal is the next (3rd) and so on
+    return `${accumulator} ${currentVal}`;
+}, 'Our')
+// When argument (Our) is passed, it is considered as accumulator at first
+console.log(reducedVal);
+// Our Programming Is Life
