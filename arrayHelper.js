@@ -1,5 +1,5 @@
 // Array helper method - map, filter, find, every, some, reduce
-/* Properties ==========
+/* Properties (map) ==========
     1. Works like regular looping
     2. works with array
     3. return a new array (modified or not)
@@ -37,3 +37,22 @@ const mapArr = (function () {
     return mapArr.join(' ');
 })()
 console.log(mapArr);
+
+
+// Array Filter ===================================
+/* Properties (filter) ==========
+    1. Works like regular looping
+    2. works with array
+    3. return a new array (based on some condition)
+    4. does not change the original array
+*/
+
+// if 'el.length > 3' is true, execute 'el'
+const filteredArr = arrMain.filter((el) => el.length > 3 && el)
+
+
+// Without '&& el', also it runs
+const filteredArr = arrMain.filter((el) => el.length > 3)
+
+
+console.log(filteredArr); // [ 'Programming', 'Life' ]
