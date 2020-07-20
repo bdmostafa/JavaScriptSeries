@@ -38,6 +38,7 @@ function Product(productName, productPrice, productQuantity, productAvailability
     // }
 
     // 'this' KW indicates object 'product' that is created by calling constructor function
+    // multiple copy
     this.productName = productName
     this.productPrice = productPrice
     this.productQuantity = productQuantity
@@ -52,10 +53,18 @@ function Product(productName, productPrice, productQuantity, productAvailability
 
 }
 
-const product = new Product('Banana', 30, 12, false)
-console.log(product);
-console.log(product.productName);
-console.log(product.showProductInfo());
+const product1 = new Product('Banana', 30, 12, false)
+console.log(product1);
+console.log(product1.productName);
+console.log(product1.showProductInfo());
 
 const product2 = new Product('Onion', 45, '1 kg', true);
 console.log(product2.showProductInfo());
+
+// prototype object - __proto__ (created a single time object - single copy)
+Product.prototype.showProductInfoProto = function () {
+    return `Product Name - ${this.productName}, Price - ${this.productPrice}, Quantity - ${this.productQuantity}, Available - ${this.productAvailability}`
+}
+
+console.log(product2.showProductInfoProto());
+console.log(product1.showProductInfoProto());
