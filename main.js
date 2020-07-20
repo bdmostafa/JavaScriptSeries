@@ -259,3 +259,6 @@ function showAllPersonByWhile(person) {
 }
 const myPerson = showAllPersonByWhile(Person);
 console.log(myPerson);
+
+console.log(100);
+// debugger;
