@@ -60,18 +60,21 @@ console.log(demoStudent()); // undefined because node js does not support window
 // To solve this problem use .call() method
 console.log(demoStudent.call(student));
 
-// ANother example of .call()
+// ANother example of .call() and .apply()
 const product = {
     pName: 'Banana',
     pPrice: 25,
     pQuantity: 4,
     showProductInfo() {
-        function innerFunction() {
+        function innerFunction(sayHi) {
             // this indicates window object if .call() is not added in function call
             console.log(this);
+            // console.log(sayHi);
         }
-        // innerFunction();
+        innerFunction();
         innerFunction.call(product);
+        // innerFunction.call(product, 'hello'); // string args pass in .call()
+        // innerFunction.apply(product, ['hello']); // array args pass in .apply()
 
         console.log(this);
         return `${this.pName} - ${this.pPrice} - ${this.pQuantity}`
