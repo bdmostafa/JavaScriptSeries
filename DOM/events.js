@@ -10,7 +10,13 @@ const inputForm = document.getElementById('productName');
 function eventInfo(evt) {
     // to avoid error
     evt.preventDefault();
-    if (!form.addEventListener) {
+    if (evt.target.id === 'submit') {
+        console.log(evt)
+        console.log('type', evt.type)
+        console.log('target', evt.target)
+        console.log('target value', inputForm.value)
+        inputForm.value = '';
+    } else {
         console.log(evt)
         console.log('type', evt.type)
         console.log('target', evt.target)
@@ -20,13 +26,7 @@ function eventInfo(evt) {
         console.log('clientX', evt.clientX)
         console.log('clientY', evt.clientY)
         console.log('clicked H1')
-    } else {
-        console.log(evt)
-        console.log('type', evt.type)
-        console.log('target', evt.target)
-        console.log('target value', inputForm.value)
     }
-
 }
 
 h2.addEventListener('click', eventInfo)
