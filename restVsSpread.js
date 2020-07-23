@@ -30,6 +30,15 @@ const person = {
     status: 'developer'
 }
 
+// const {
+//     name,
+//     age,
+//     gender,
+//     status
+// } = person;
+
+// console.log(name);
+
 const updatePerson = {
     // spread for unpacking the object { { }, { }} ===> { }
     ...person,
