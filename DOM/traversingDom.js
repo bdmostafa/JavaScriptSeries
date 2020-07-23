@@ -14,6 +14,20 @@ console.log(val);
 // val = val.children[0].nextElementSibling.nextElementSibling; // Panjabi
 
 // val = val.children[0].nextElementSibling.nextElementSibling.parentElement;
-val = val.children[0].nextElementSibling.nextElementSibling.parentElement.parentElement;
+// val = val.children[0].nextElementSibling.nextElementSibling.parentElement.parentElement;
 
+// Interacting with childNodes ===========================
+// // 1 - Element
+// // 2 - Attribute (depreciated)
+// // 3 - Text Node
+// // 8 - Comment
+// // 9 - Document itself
+// // 10 - Doctype
+
+// val = val.childNodes[1].nodeType; // 1 (Element)
+// val = val.childNodes[1].nodeName; // LI
+
+if (val.childNodes.nodeType !== 3) {
+    val.childNodes[1].classList.add('myClassNew')
+}
 console.log(val);
