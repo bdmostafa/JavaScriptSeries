@@ -60,3 +60,14 @@ console.log(name, restObjValue);
 // console.log(name, ...restObjValue);
 console.log(...name);
 // M o s t a f a
+
+// Another example of both
+const showBio = (name, age, ...values) => { // Rest operator
+    return {
+        Name: name,
+        Age: age,
+        rest: [...values, 'Marketer', 'Designer'] // Spread operator
+    }
+};
+
+console.log(showBio('Mostafa', 29, 'Web Developer', 'Programmer'));
