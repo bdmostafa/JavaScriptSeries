@@ -116,10 +116,14 @@ console.log(findUser);
 
 // Matching with name
 const findComments = comments.filter(comment => comment.name === findUser.name)
-    .map(commentBody => `<p>The user <b>${findUser.name}</b>'s comments are as follows:</p><p>${commentBody.body}</p>`)
+    .map(commentBody => `<p>${commentBody.body}</p>`)
     .join(', ')
     .replace(/,/, '');
 
-document.body.innerHTML = findComments;
+let body;
+if (findComments) {
+    body = `<p>The user <b>${findUser.name}</b>'s comments are as follows:</p> ${findComments}`
+}
+document.body.innerHTML = body;
 
 console.log(findComments);
