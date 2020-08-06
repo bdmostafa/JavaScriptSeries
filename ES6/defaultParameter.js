@@ -1,4 +1,14 @@
 // Default parameter / default function arguments
+
+// default parameter with false indicator before ES6
+const minus = (num1, num2) => {
+    // Here || indicates false that means if num2's value is not given, 0 is counted
+    num2 = num2 || 0;
+    return num1 - num2;
+}
+console.log(minus(10)); // 10
+console.log(minus(10, 10)); // 0
+
 // Function statement
 function multiply(num1 = 0, num2 = 2) {
     return num1 * num2;
