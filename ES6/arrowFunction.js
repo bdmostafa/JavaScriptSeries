@@ -10,10 +10,17 @@ const multiply = (num1 = 0, num2 = 2) => num1 * num2;
 console.log(multiply(undefined, 1)); // 0
 console.log(multiply(1)); // 2
 
+const area = (length, width) => length * width;
+console.log(area(5, 3)); // 15
+
 // When a single/only one parameter, no need to use bracket, ()
 const modulus = num1 => num1 % 3;
 console.log(modulus(1)); // 1
 console.log(modulus(3)); // 0
+
+// When there is no parameter, use bracket ()
+const selfItem = () => 1;
+console.log(selfItem());
 
 // No need to use arrow function in object
 const bio = {
