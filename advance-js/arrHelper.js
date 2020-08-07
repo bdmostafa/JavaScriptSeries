@@ -122,3 +122,43 @@ const sum = nums.reduce((accumulator, currentValue) => accumulator + currentValu
 }, 0);
 */
 console.log(sum);
+
+
+// ARray helper example in object ===================================
+const students = [{
+        name: 'Mostafa',
+        marks: 85
+    },
+    {
+        name: 'Mahmud',
+        marks: 75
+    },
+    {
+        name: 'Shams',
+        marks: 95
+    },
+    {
+        name: 'Sadia',
+        marks: 99
+    },
+    {
+        name: 'Tipu',
+        marks: 79
+    },
+    {
+        name: 'Shad',
+        marks: 81
+    },
+];
+
+const names = students.map(n => n.name);
+console.log(names);
+
+const marks = students.map(m => m.marks);
+console.log(marks);
+
+const ninetyPlus = students.filter(m => m.marks >= 90);
+console.log(ninetyPlus);
+
+const isAllPassed = students.every(m => m.marks >= 40);
+console.log(isAllPassed);
