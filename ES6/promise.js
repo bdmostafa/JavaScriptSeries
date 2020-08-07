@@ -23,3 +23,41 @@ console.log(promiseData);
 promiseData.then(data => {
     console.log(data);
 }).catch(error => console.log(error));
+
+
+// Chain in promise
+const pData = (data) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(data);
+            reject(Error('Error...'));
+        }, 1000);
+    });
+}
+
+const anotherPData = (anotherData) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(anotherData + 1);
+            reject(Error('Error...'));
+        }, 1000);
+    });
+}
+
+pData(10).then(data => {
+    console.log(data); // 10
+
+    anotherPData(data)
+        .then(anotherData => console.log(anotherData)) // 11
+        .catch(e => console.log(e));
+
+}).catch(error => console.log(error));
+
+// Another way (return)
+pData(10).then(data => {
+        console.log(data); // 10
+
+        return anotherPData(data)
+
+    }).then(anotherData => console.log(anotherData)) // 11
+    .catch(e => console.log(e));
