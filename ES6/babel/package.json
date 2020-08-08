@@ -11,6 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.1"
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
