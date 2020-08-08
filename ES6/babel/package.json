@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "babel": "babel main.js --out-file dist/main.js"
+    "babel": "babel main.js -w --out-file dist/main.js"
   },
   "keywords": [],
   "author": "",
@@ -12,11 +12,15 @@
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
+    "@babel/plugin-proposal-async-generator-functions": "^7.10.5",
     "@babel/preset-env": "^7.11.0"
   },
   "babel": {
     "presets": [
       "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-async-generator-functions"
     ]
   }
 }
