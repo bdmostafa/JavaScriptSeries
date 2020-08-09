@@ -20,3 +20,18 @@ console.log(Date.now());
 
 const birthdayShams = new Date(2016, 07, 13, 16, 55);
 console.log(birthdayShams.getDate());
+
+
+// Execution time calculation program
+const start = new Date();
+let sum = 0;
+
+for (let i = 0; i < 10000000; i++) {
+    sum++;
+}
+
+const end = new Date();
+
+const ms = end - start;
+const inSecond = ms / 1000;
+console.log('time elapsed: ', inSecond, 'total loop: ', sum);
