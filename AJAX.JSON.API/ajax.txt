@@ -7,4 +7,21 @@ API - Application Programming Interface
 
 AJAX - Asynchronous JavaScript And XML (data - JSON) (its not a programming language)
 
+JSON - JavaScript Object Notation
+
 Fetch API
+
+https://httpstatuses.com/
+
+readyState:	
+Holds the status of the XMLHttpRequest.
+0: request not initialized
+1: server connection established
+2: request received
+3: processing request
+4: request finished and response is ready
+
+status:
+200: "OK"
+403: "Forbidden"
+404: "Page not found"
