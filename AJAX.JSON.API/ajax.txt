@@ -1,0 +1,10 @@
+Type of Request
+    GET, PUT, PATCH, POST, DELETE
+
+REST API (Representational State Transfer)
+
+API - Application Programming Interface
+
+AJAX - Asynchronous JavaScript And XML (data - JSON) (its not a programming language)
+
+Fetch API
