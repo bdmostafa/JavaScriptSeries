@@ -28,9 +28,9 @@ function getNumber(num) {
 }
 
 // To solve this problem, there are three methods
-// 1. callback function
-// 2. Promise API
-// 3. async await - behind the scene works with Promise (Syntax issuer)
+// 1. callback function ====================
+// 2. Promise API ======================
+// 3. async await - behind the scene works with Promise (Syntax issuer) ================================
 
 // callback function (when long )
 console.log(1);
@@ -106,6 +106,8 @@ tryPromise
         console.log(error);
     })
 
+
+
 // Converting previous callback example to Promise =====================================
 getUser(1)
     .then(user => {
@@ -159,12 +161,38 @@ function getPrice(courseName) {
 }
 
 
+// Promise - resolve, reject, all, race ======================================
+const p1 = Promise.resolve('step1');
+const p2 = Promise.resolve('step2');
+const p3 = Promise.reject('step3');
+// const p3 = Promise.resolve('step3');
+
+// Note: All promises are to be independent, not depended with others to use Promise.all()
+
+// If all promises are resolved, execute then(). Otherwise execute catch()
+Promise.all([p1,
+        p2,
+        p3
+    ])
+    .then(result => {
+        console.log(result);
+    })
+    .catch(err => {
+        console.log(err)
+    })
 
 
-
-
-
-
+// If any promise is resolved, execute then()
+Promise.race([p1,
+        p2,
+        p3
+    ])
+    .then(result => {
+        console.log(result);
+    })
+    .catch(err => {
+        console.log(err)
+    })
 
 
 
