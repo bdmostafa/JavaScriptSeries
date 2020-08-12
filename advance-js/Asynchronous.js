@@ -31,6 +31,7 @@ function getNumber(num) {
 // 1. callback function ====================
 // 2. Promise API ======================
 // 3. async await - behind the scene works with Promise (Syntax issuer) ================================
+// 4. try/catch ======================================
 
 // callback function (when long )
 console.log(1);
@@ -133,11 +134,28 @@ getUser(1)
 // Converting then() catch() to async/await =========
 async function getResult() {
     const user = await getUser(1);
+    console.log(user);
     const courses = await enrolledCourses(user.name);
+    console.log(courses);
     const price = await getPrice(courses[0]);
+    console.log(price);
     console.log(user, courses, price);
 }
 getResult();
+
+// Using try/catch approach =====================================
+try {
+    async function getResult() {
+        const user = await getUser(1);
+        const courses = await enrolledCourses(user.name);
+        const price = await getPrice(courses[0]);
+        console.log(user, courses, price);
+    }
+    getResult();
+
+} catch (err) {
+    console.log(err);
+}
 
 
 function getUser(id) {
@@ -208,7 +226,7 @@ Promise.race([p1,
 
 
 
-// Another example of async/await ===============================
+// Another example of async/await on fetch API ===============================
 
 async function loadData() {
     const response = await fetch('https://jsonplaceholder.typicode.com/users')
