@@ -54,40 +54,121 @@ function getNum(num, callback) {
 // 2. course enrollment - 2s
 // 3. price of the course - 2s
 
-getUser(1, function (user) {
-    console.log(user);
-    enrolledCourses(user.name, function (courses) {
-        console.log(courses);
-        getPrice(courses[0], function () {
-            console.log('JavaScript course price is 500 USD.')
-        })
-    })
+// getUser(1, function (user) {
+//     console.log(user);
+//     enrolledCourses(user.name, function (courses) {
+//         console.log(courses);
+//         getPrice(courses[0], function () {
+//             console.log('JavaScript course price is 500 USD.')
+//         })
+//     })
+// })
+
+// // Getting user - 2s
+// function getUser(id, callback) {
+//     setTimeout(() => {
+//         callback({
+//             id: 1,
+//             name: 'Mostafa',
+//             profession: 'Web Developer'
+//         });
+//     }, 2000)
+// }
+
+// // course enrollment - 2s
+// function enrolledCourses(userName, callback) {
+//     setTimeout(() => {
+//         callback(['JavaScript', 'React', 'Node']);
+//     }, 2000)
+// }
+
+// // price of the course - 2s
+// function getPrice(courseName, callback) {
+//     setTimeout(() => {
+//         callback()
+//     }, 2000)
+// }
+
+// Promise (constructor function) =====================================================
+// Pending, resolved, reject
+const tryPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('after 3s');
+        reject(new Error('some error occurred.'))
+    }, 3000);
 })
 
-// Getting user - 2s
-function getUser(id, callback) {
-    setTimeout(() => {
-        callback({
-            id: 1,
-            name: 'Mostafa',
-            profession: 'Web Developer'
-        });
-    }, 2000)
+tryPromise
+    .then(text => {
+        console.log(text);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+
+// Converting previous callback example to Promise =====================================
+getUser(1)
+    .then(user => {
+        console.log(user);
+        return enrolledCourses(user.name)
+        // .then(courses => {
+        //     console.log(courses)
+        // })
+        // .catch(err => err.message);
+    })
+    .then(courses => {
+        console.log(courses);
+        return getPrice(courses[0]);
+    })
+    .then(() => {
+        console.log('Price is 500 USD.');
+    })
+    .catch(err => {
+        console.log(err.message)
+    })
+
+function getUser(id) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({
+                id: 1,
+                name: 'Mostafa',
+                profession: 'Web Developer'
+            });
+            reject(new Error('User not found.'));
+        }, 2000)
+    })
 }
 
-// course enrollment - 2s
-function enrolledCourses(userName, callback) {
-    setTimeout(() => {
-        callback(['JavaScript', 'React', 'Node']);
-    }, 2000)
+function enrolledCourses(userName) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(['JavaScript', 'React', 'Node']);
+            reject(new Error('Courses not found'));
+        }, 2000)
+    })
 }
 
-// price of the course - 2s
-function getPrice(courseName, callback) {
-    setTimeout(() => {
-        callback()
-    }, 2000)
+function getPrice(courseName) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+            reject(new Error('Price not found.'));
+        }, 2000)
+    })
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
