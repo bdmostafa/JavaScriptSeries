@@ -122,12 +122,23 @@ getUser(1)
         console.log(courses);
         return getPrice(courses[0]);
     })
-    .then(() => {
-        console.log('Price is 500 USD.');
+    .then(price => {
+        console.log(price);
     })
     .catch(err => {
         console.log(err.message)
     })
+
+// async/await =========================================================
+// Converting then() catch() to async/await =========
+async function getResult() {
+    const user = await getUser(1);
+    const courses = await enrolledCourses(user.name);
+    const price = await getPrice(courses[0]);
+    console.log(user, courses, price);
+}
+getResult();
+
 
 function getUser(id) {
     return new Promise((resolve, reject) => {
@@ -154,7 +165,7 @@ function enrolledCourses(userName) {
 function getPrice(courseName) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve();
+            resolve('Price is 500 USD');
             reject(new Error('Price not found.'));
         }, 2000)
     })
@@ -193,8 +204,6 @@ Promise.race([p1,
     .catch(err => {
         console.log(err)
     })
-
-
 
 
 
