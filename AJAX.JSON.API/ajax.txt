@@ -8,6 +8,9 @@ API - Application Programming Interface
 AJAX - Asynchronous JavaScript And XML (data - JSON) (its not a programming language)
 
 JSON - JavaScript Object Notation
+Validator JSON Data
+https://jsonlint.com/
+
 
 Fetch API
 
