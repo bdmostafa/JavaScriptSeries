@@ -7,5 +7,15 @@
         "name": "Mahmud",
         "age": 31,
         "profession": ["Full Stack Engineer", "Data Analyst"]
+    },
+    {
+        "name": "Shams",
+        "age": 12,
+        "profession": ["Web Developer", "Data Scientist"]
+    },
+    {
+        "name": "Sadia",
+        "age": 25,
+        "profession": ["Full Stack Engineer", "Data Analyst"]
     }
 ]
