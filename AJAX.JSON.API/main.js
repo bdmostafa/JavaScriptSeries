@@ -1,7 +1,7 @@
-const btn = document.getElementById('btn');
-btn.addEventListener('click', loadData);
+const btnAjax = document.getElementById('btn-ajax');
+btnAjax.addEventListener('click', loadDataByAjax);
 
-function loadData() {
+function loadDataByAjax() {
     // Instantiate constructor function
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -32,4 +32,21 @@ function loadData() {
     // xhr.open('GET', './ajax.txt', true);
     xhr.open('GET', './sample.json', true)
     xhr.send();
+}
+
+
+// Fetch API practice instead of XMLHTtpRequest
+document.getElementById('btn-fetch').addEventListener('click', loadDataByFetch)
+
+// function loadDataByFetch() {
+//     fetch('./sample.json')
+//         .then(data => data.json())
+//         .then(data => console.log(data))
+// }
+
+// Using async/await
+async function loadDataByFetch() {
+    const results = await fetch('./sample.json')
+        .then(data => data.json());
+    console.log(results);
 }
