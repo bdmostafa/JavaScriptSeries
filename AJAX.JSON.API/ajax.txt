@@ -11,6 +11,9 @@ JSON - JavaScript Object Notation
 Validator JSON Data
 https://jsonlint.com/
 
+JSON Placeholder Demo REST API
+https://jsonplaceholder.typicode.com/guide.html
+
 
 Fetch API
 
