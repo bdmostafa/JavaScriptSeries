@@ -27,3 +27,11 @@ babel documentation
 https://babeljs.io/docs/en/babel-preset-env
 @babel/preset-env is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s).
 Latest code is transformed to ES5 or any old version code
+
+create index.html
+Create src folder -> index.js
+create webpack.config.js (name must be)
+Use js common modular pattern
+require path
+....
+webpack generates build folder automatically
