@@ -35,3 +35,14 @@ Use js common modular pattern
 require path
 ....
 webpack generates build folder automatically
+
+Method 1. Babel loaders - write some rules on webpack.config.js
+https://webpack.js.org/loaders/babel-loader/#usage
+for multiple script js files loading and converting next generation code into ES5
+
+Method 2. For async await converting support, use polyfill
+https://webpack.js.org/guides/shimming/#loading-polyfills
+
+Method 3. For server creating use webpack dev server
+https://webpack.js.org/guides/development/#using-webpack-dev-server
+https://webpack.js.org/configuration/dev-server/#devserverpublicpath-
