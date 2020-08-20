@@ -46,3 +46,6 @@ https://webpack.js.org/guides/shimming/#loading-polyfills
 Method 3. For server creating use webpack dev server
 https://webpack.js.org/guides/development/#using-webpack-dev-server
 https://webpack.js.org/configuration/dev-server/#devserverpublicpath-
+
+1. common js modular pattern (used ny Node js internal)
+2. ES6 modular pattern
